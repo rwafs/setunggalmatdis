@@ -1,0 +1,154 @@
+/* ==========================================================
+   about-extra.css
+   Dimuat SETELAH style.css; hanya memengaruhi about.html.
+   Warna mengikuti tema: #2c3e50 (navy) dan #3498db (biru).
+   ========================================================== */
+
+/* ---------- Hero ---------- */
+.about-hero {
+    background: linear-gradient(135deg, #2c3e50 0%, #34607f 100%);
+    color: #fff;
+    text-align: center;
+    padding: 56px 20px 64px;
+}
+.about-hero-inner { max-width: 760px; margin: 0 auto; }
+.about-hero h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.about-hero h1::after {
+    content: '';
+    display: block;
+    width: 56px; height: 4px;
+    margin: 14px auto 0;
+    background: #3498db;
+    border-radius: 2px;
+}
+.about-hero p {
+    font-size: 16px;
+    color: #dbe7f1;
+    margin-top: 6px;
+}
+
+/* ---------- Section tim ---------- */
+.about-section {
+    padding: 0 20px 60px;
+    background: #f7f9fa;
+}
+.about-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+
+.team-heading {
+    font-size: 22px;
+    color: #2c3e50;
+    margin: 44px 0 28px;
+}
+
+/* Grid: 5 sejajar di layar lebar, lalu 3+2, 2+2+1, dan 1 kolom di HP.
+   Baris terakhir selalu di tengah, jadi tidak ada kartu yang menggantung di kiri. */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.team-card {
+    width: calc((100% - 96px) / 5);
+    min-width: 0;
+    padding: 28px 14px 24px;
+    background: #fff;
+    border-radius: 12px;
+    border-top: 4px solid #3498db;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .06);
+    overflow-wrap: anywhere;
+}
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(44, 62, 80, .14);
+}
+
+/* Foto bulat + inisial sebagai cadangan kalau foto gagal dimuat */
+.member-img-box {
+    position: relative;
+    width: 116px; height: 116px;
+    margin: 0 auto 18px;
+    border: 3px solid #3498db;
+    box-shadow: 0 0 0 5px #e8f4fd;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+}
+.member-img-box::before {
+    content: attr(data-initials);
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    color: #fff; font-size: 34px; font-weight: 700;
+}
+.member-img { position: relative; z-index: 1; }
+
+.member-name {
+    font-size: 17px;
+    line-height: 1.3;
+    color: #2c3e50;
+    margin: 0 0 6px;
+}
+.member-nim {
+    font-size: 13.5px;
+    color: #2980b9;
+    margin: 0 0 14px;
+}
+.member-role {
+    display: inline-block;
+    padding: 5px 12px;
+    background: #e8f4fd;
+    color: #2471a3;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* ---------- Tentang blog ---------- */
+.about-note {
+    max-width: 680px;
+    margin: 48px auto 0;
+    padding: 24px 28px;
+    background: #fff;
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
+    text-align: left;
+}
+.about-note h3 { font-size: 18px; color: #2c3e50; margin-bottom: 8px; }
+.about-note p { font-size: 15px; line-height: 1.7; color: #4f5f6f; }
+.about-note-link {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 9px 18px;
+    background: #2980b9;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.about-note-link:hover { background: #2c3e50; color: #fff; }
+.about-note-link:focus-visible { outline: 3px solid #93c5ee; outline-offset: 2px; }
+
+/* ---------- Responsif ---------- */
+@media (max-width: 1099px) {
+    .team-card { width: calc((100% - 48px) / 3); }
+}
+@media (max-width: 699px) {
+    .about-hero { padding: 40px 16px 48px; }
+    .about-hero h1 { font-size: 28px; }
+    .team-card { width: calc((100% - 24px) / 2); max-width: none; }
+}
+@media (max-width: 419px) {
+    .team-card { width: 100%; max-width: 300px; }
+    .about-note { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .team-card { transition: none; }
+    .team-card:hover { transform: none; }
+}

@@ -1,0 +1,279 @@
+/* ==========================================================
+   artikel-extra.css  (disesuaikan dengan style.css Kelompok 1)
+   Dimuat SETELAH style.css; hanya memengaruhi artikel.html.
+   Warna mengikuti tema: #2c3e50 (navy) dan #3498db (biru).
+   ========================================================== */
+:root {
+    --ax-accent: #2980b9;          /* biru sedikit lebih tua dari #3498db agar teks putih tetap terbaca */
+    --ax-accent-soft: #e8f4fd;     /* sama dengan latar .category */
+    --ax-accent-line: #cfe6f7;
+    --ax-ink: #2c3e50;
+    --ax-text: #4f5f6f;
+    --ax-muted: #7f8c8d;
+    --ax-line: #e6ebef;
+    --ax-ok: #1e8449;
+    --ax-ok-soft: #e8f6ee;
+    --ax-warn: #b9770e;
+    --ax-warn-soft: #fdf3e3;
+
+    /* warna 4 kelas ekuivalen (program studi) */
+    --ax-c1: #2980b9; --ax-c1-soft: #e6f1fb;
+    --ax-c2: #1e9e7a; --ax-c2-soft: #e2f6f0;
+    --ax-c3: #d68910; --ax-c3-soft: #fdf0dc;
+    --ax-c4: #c0392b; --ax-c4-soft: #fbe9e7;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+/* ---------- Progress baca ---------- */
+.read-progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0;
+    background: #3498db; z-index: 1000;
+}
+
+/* ---------- Isi artikel ----------
+   style.css memberi margin kiri/kanan 20px pada p dan h4 di .card-body.
+   Di sini jarak itu dipindah ke padding .article-body supaya semua elemen
+   (paragraf, rumus, kotak, daftar) lurus di margin yang sama. */
+.card-body.article-body { padding: 0 20px 10px; }
+
+.article-body p {
+    margin: 0 0 1em;
+    line-height: 1.8;
+}
+.article-body li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ax-text);
+    margin-bottom: .35em;
+}
+.article-body li:last-child { margin-bottom: 0; }
+
+.article-body h2 {
+    margin: 2.2em 0 .8em;
+    padding-bottom: .35em;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ax-ink);
+    border-bottom: 2px solid #3498db;
+}
+.article-body h3 {
+    margin: 1.8em 0 .6em;
+    font-size: 17px;
+    line-height: 1.35;
+    color: var(--ax-accent);
+}
+.article-body h4 {
+    margin: 0 0 .4em;
+    font-size: 16px;
+    text-align: left;
+    color: var(--ax-accent);
+}
+
+p a {
+    color: #0066cc;
+    /* text-decoration: underline;
+    text-underline-offset: 2px; */
+}
+p a:hover {
+    color: #0066cc;      
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ---------- Rumus / notasi ---------- */
+.math {
+    font-family: "Cambria Math", "STIX Two Math", "Latin Modern Math", Cambria, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 1.08em;
+    color: var(--ax-ink);
+}
+.math-block {
+    margin: 1em 0 1.2em;
+    padding: .8em 1em;
+    text-align: center;
+    font-size: 18px;
+    background: #f8fafc;
+    border: 1px solid var(--ax-line);
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* ---------- Kartu tiga sifat ---------- */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 1.2em 0 1.4em;
+}
+.property-card {
+    padding: 16px;
+    background: var(--ax-accent-soft);
+    border: 1px solid var(--ax-accent-line);
+    border-top: 4px solid #3498db;
+    border-radius: 8px;
+}
+.property-card p {
+    margin: 0 0 .6em;
+    font-size: 14px;
+    line-height: 1.55;
+    text-align: left;
+}
+.property-card .math {
+    margin: 0; padding: 6px 0; text-align: center;
+    font-size: 21px; background: #fff; border-radius: 6px;
+}
+
+/* ---------- Kotak penekanan ---------- */
+.callout {
+    margin: 1.4em 0;
+    padding: 16px 20px;
+    border-left: 5px solid #3498db;
+    background: var(--ax-accent-soft);
+    border-radius: 0 8px 8px 0;
+}
+.callout > :last-child { margin-bottom: 0; }
+.callout ol, .callout ul { padding-left: 1.3em; }
+.callout-title { margin-bottom: .5em; font-weight: 700; color: var(--ax-accent); }
+.callout-question { border-color: var(--ax-warn); background: var(--ax-warn-soft); }
+.callout-question .callout-title { color: var(--ax-warn); }
+.callout-result { border-color: var(--ax-ok); background: var(--ax-ok-soft); }
+.callout-theorem .math-block { background: #fff; }
+
+/* ---------- Langkah pembuktian ---------- */
+.proof {
+    margin: 1.2em 0;
+    padding: 16px 20px 6px;
+    border: 1px solid var(--ax-line);
+    border-radius: 10px;
+    background: #fff;
+}
+.proof-head {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: .7em;
+    font-weight: 700; font-size: 16px; color: var(--ax-ink);
+}
+.proof-tag {
+    display: inline-grid; place-items: center;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--ax-accent); color: #fff;
+    font-size: 14px; font-weight: 700;
+}
+.proof .math { margin: .2em 0 .8em; text-align: center; font-size: 21px; }
+.proof ul { margin: 0 0 1em; padding-left: 1.3em; }
+.proof-end {
+    margin-top: .6em;
+    padding: 10px 0 6px;
+    border-top: 1px dashed var(--ax-line);
+    color: var(--ax-ok);
+}
+.proof-end::after { content: " ∎"; font-weight: 700; }
+
+/* ---------- Daftar kelas ekuivalen ---------- */
+.class-list { list-style: none; margin: 1em 0 1.4em; padding: 0; }
+.class-list li {
+    margin: 8px 0; padding: 10px 14px;
+    border-left: 5px solid var(--ax-accent);
+    border-radius: 0 8px 8px 0;
+    overflow-x: auto;
+}
+.class-list .c1, .part.c1 { background: var(--ax-c1-soft); border-color: var(--ax-c1); }
+.class-list .c2, .part.c2 { background: var(--ax-c2-soft); border-color: var(--ax-c2); }
+.class-list .c3, .part.c3 { background: var(--ax-c3-soft); border-color: var(--ax-c3); }
+.class-list .c4, .part.c4 { background: var(--ax-c4-soft); border-color: var(--ax-c4); }
+
+/* ---------- Ilustrasi partisi ---------- */
+.partition-fig { margin: 1.6em 0; }
+.partition-box {
+    position: relative;
+    padding: 34px 14px 14px;
+    border: 2px solid var(--ax-ink);
+    border-radius: 12px;
+    background: #fff;
+}
+.partition-label {
+    position: absolute; top: 6px; left: 14px;
+    font-family: "Cambria Math", "STIX Two Math", serif;
+    font-style: italic; font-weight: 700; font-size: 19px;
+    color: var(--ax-ink);
+}
+.partition-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.part {
+    padding: 18px 12px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 8px;
+}
+.part b {
+    display: block;
+    font-family: "Cambria Math", "STIX Two Math", serif;
+    font-size: 20px;
+    color: var(--ax-ink);
+}
+.part small { color: var(--ax-text); font-size: 13px; }
+.partition-fig figcaption {
+    margin-top: .7em; text-align: center;
+    font-size: 13px; color: var(--ax-muted); line-height: 1.5;
+}
+
+/* ---------- Daftar pustaka ---------- */
+.references { padding-left: 1.4em; }
+.references li { margin-bottom: .8em; font-size: 14px; overflow-wrap: anywhere; }
+.references a { color: var(--ax-accent); }
+.references a:hover { text-decoration: underline; }
+
+/* ---------- Sidebar: daftar isi ---------- */
+.toc-widget {
+    position: sticky;
+    top: 100px;                      /* di bawah header yang sticky */
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+}
+/* Cegah kolom grid melebar melewati frame */
+.main-layout > .content,
+.main-layout > .sidebar { min-width: 0; }
+.widget { overflow-wrap: anywhere; }
+
+/* Daftar isi: pastikan tetap vertikal (tidak terkena aturan "nav ul" di style.css) */
+.toc, .toc ul { display: block; list-style: none; margin-right: 0; }
+.toc li { display: block; margin-left: 0; }
+.toc ul { margin: 2px 0 6px 12px; padding-left: 10px; border-left: 2px solid var(--ax-line); }
+.toc a {
+    display: block; padding: 4px 8px; margin: 1px 0;
+    font-size: 13.5px; line-height: 1.4; font-weight: 400;
+    color: var(--ax-ink);
+    border-radius: 6px;
+}
+.toc a:hover { background: var(--ax-accent-soft); color: var(--ax-accent); }
+.toc a.current { background: var(--ax-accent-soft); color: var(--ax-accent); font-weight: 700; }
+
+/* ---------- Tombol kembali ke atas ---------- */
+.to-top {
+    position: fixed; right: 20px; bottom: 20px;
+    width: 44px; height: 44px;
+    border: none; border-radius: 50%;
+    background: var(--ax-accent); color: #fff;
+    font-size: 20px; cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s;
+}
+.to-top.show { opacity: 1; pointer-events: auto; }
+.to-top:focus-visible, .toc a:focus-visible { outline: 3px solid #93c5ee; outline-offset: 2px; }
+
+/* ---------- Responsif (breakpoint sama dengan style.css: 768px) ---------- */
+@media (max-width: 768px) {
+    .toc-widget { position: static; max-height: none; }
+}
+@media (max-width: 640px) {
+    .card-body.article-body { padding: 0 4px 6px; }
+    .property-grid { grid-template-columns: 1fr; }
+    .partition-grid { grid-template-columns: 1fr; }
+    .article-body h2 { font-size: 20px; }
+    .math-block { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .to-top { transition: none; }
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel Relasi Ekuivalen Matematika Diskrit</title>
+    <link rel="icon" type="image/png" href="img/logo_upn.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Tambahan tampilan khusus artikel (dimuat setelah style.css) -->
+    <link rel="stylesheet" href="extra.css">
+</head>
+<body>
+
+    <!-- Progress baca -->
+    <div class="read-progress" id="readProgress" aria-hidden="true"></div>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container navbar">
+            <div class="logo-wrapper">
+                <img src="img/logo_upn.png" alt="Logo" class="logo-img">
+                <div class="logo">SI-<span>B</span></div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container main-layout">
+
+        <!-- Kolom Artikel Utama -->
+        <section class="content">
+            <article class="card">
+                <img src="img/gedung.jpg" class="card-img" alt="Gedung UPN">
+                <div class="card-body article-body">
+                    <span class="category">Matematika Diskrit</span>
+                    <h1 class="article-title">Pemodelan Relasi Ekuivalen dalam Pengelompokan Anggota BEM FTI Berdasarkan Kesamaan Program Studi</h1>
+                    <div class="meta">Dibuat oleh <strong>Kelompok 1 MatDis SI-B</strong> • 29 Oktober 2026</div>
+
+                    <!-- ===== 1. PENDAHULUAN ===== -->
+                    <h2 id="pendahuluan">1. Pendahuluan</h2>
+                    <p>Matematika diskrit merupakan salah satu cabang matematika yang mempelajari struktur-struktur diskrit atau terputus. Cakupannya meliputi himpunan, relasi, fungsi, logika matematika, graf, kombinatorika, dan teori bilangan, yang semuanya sangat krusial bagi kemajuan ilmu komputer serta teknologi informasi <i>(Wati et al., 2026)</i>. Dari sini dapat disimpulkan bahwa himpunan dan relasi merupakan konsep dasar yang sering digunakan untuk membuat model hubungan antar objek secara formal.</p>
+
+                    <p>Relasi ekuivalen merupakan salah satu jenis relasi yang krusial, yaitu relasi biner yang bersifat refleksif, simetris, dan transitif. Sifat-sifat tersebut memungkinkan elemen-elemen dalam himpunan dikelompokkan berdasarkan kesamaan tertentu. Setiap kelompok disebut <b>kelas ekuivalen</b>, yaitu himpunan bagian yang berisi elemen-elemen yang saling berelasi ekuivalen.</p>
+
+                    <p>Selanjutnya, kelas-kelas ekuivalen yang terbentuk dari sebuah relasi ekuivalen akan membentuk suatu <b>partisi</b> terhadap himpunan asalnya. Artinya, himpunan tersebut terbagi menjadi beberapa himpunan bagian yang tidak kosong, saling lepas, dan gabungannya sama dengan himpunan semula. Dengan demikian, relasi ekuivalen memberi kerangka yang sistematis untuk mengklasifikasikan objek yang memiliki kesamaan tertentu, sekaligus menghubungkan konsep relasi, kelas ekuivalen, dan partisi dalam matematika diskrit.</p>
+
+                    <p>Pada organisasi kemahasiswaan, sebagai contoh Badan Eksekutif Mahasiswa Fakultas Teknik Industri (BEM FTI)   <a href="https://upnyk.ac.id">Universitas Pembangunan Nasional Veteran Yogyakarta (UPNVY)</a>, anggota berasal dari berbagai program studi. Agar distribusi peran, koordinasi, dan analisis data keanggotaan dapat dilakukan secara terstruktur, keberagaman latar belakang ini memerlukan sistem pengelompokan yang jelas. Pengelompokan anggota BEM FTI berdasarkan program studi ini dapat dimodelkan secara matematis menggunakan konsep relasi ekuivalen.</p>
+
+                    <p>Artikel ini bertujuan untuk membuktikan secara formal bahwa relasi kesamaan program studi antar anggota BEM FTI memenuhi sifat-sifat relasi ekuivalen, yakni refleksif, simetris, dan transitif, serta membuktikan bahwa relasi tersebut secara alami membentuk sebuah partisi pada himpunan seluruh anggota BEM FTI.</p>
+
+                    <div class="callout callout-question">
+                        <div class="callout-title">Rumusan masalah</div>
+                        <ol>
+                            <li>Bagaimana relasi kesamaan program studi pada anggota BEM FTI didefinisikan secara matematis?</li>
+                            <li>Apakah relasi tersebut memenuhi sifat refleksif, simetris, dan transitif?</li>
+                            <li>Bagaimana kelas ekuivalen yang terbentuk dari relasi tersebut?</li>
+                            <li>Bagaimana kelas ekuivalen tersebut membentuk partisi himpunan anggota BEM FTI?</li>
+                        </ol>
+                    </div>
+
+                    <!-- ===== 2. TINJAUAN PUSTAKA ===== -->
+                    <h2 id="tinjauan-pustaka">2. Tinjauan Pustaka</h2>
+
+                    <h3 id="himpunan-relasi">2.1 Himpunan dan Relasi Biner</h3>
+                    <p>Himpunan merupakan kumpulan objek yang terdefinisi jelas, sehingga kita bisa menentukan apakah tiap objek termasuk anggota himpunan tersebut atau tidak. Pada matematika diskrit, himpunan berperan sebagai landasan untuk membahas relasi antar objek.</p>
+                    <p>Relasi biner dari himpunan <i>A</i> ke <i>B</i> didefinisikan sebagai himpunan bagian dari hasil kali kartesius <i>A × B</i>. Jika <i>A = B</i>, relasi tersebut disebut relasi biner pada <i>A</i>. Secara umum, relasi pada himpunan <i>S</i> juga dapat dikatakan sebagai himpunan bagian dari <i>S × S</i>.</p>
+
+                    <h3 id="relasi-ekuivalen">2.2 Relasi Ekuivalen</h3>
+                    <p>Relasi ekuivalen adalah relasi biner <i>R</i> pada himpunan <i>A</i> yang memenuhi tiga sifat, yaitu refleksif, simetris, dan transitif. Relasi ini dilambangkan dengan <i>a R b</i> atau <i>a ~ b</i>, yang berarti <i>a</i> berelasi ekuivalen dengan <i>b</i>. Tiga sifat tersebut didefinisikan sebagai berikut:</p>
+
+                    <div class="property-grid">
+                        <div class="property-card">
+                            <h4>Refleksif</h4>
+                            <p>Untuk setiap <i><b>a ∈ A</b></i>, berlaku:</p>
+                            <div class="math">aRa</div>
+                        </div>
+                        <div class="property-card">
+                            <h4>Simetris</h4>
+                            <p>Untuk setiap <i><b>a, b ∈ A</b></i>, jika <i>aRb</i>, maka:</p>
+                            <div class="math">bRa</div>
+                        </div>
+                        <div class="property-card">
+                            <h4>Transitif</h4>
+                            <p>Untuk setiap <i><b>a, b, c ∈ A</b></i>, jika <i>aRb</i> dan <i>bRc</i>, maka:</p>
+                            <div class="math">aRc</div>
+                        </div>
+                    </div>
+
+                    <p>Ketiga sifat tersebut menjadi dasar untuk mengelompokkan elemen-elemen himpunan yang dianggap “sama” menurut kriteria tertentu, yang disebut relasi ekuivalen.</p>
+
+                    <h3 id="kelas-ekuivalen-teori">2.3 Kelas Ekuivalen</h3>
+                    <p>Untuk setiap <i>a ∈ A</i>, kelas ekuivalen dari <i>a</i> terhadap relasi ekuivalen <i>R</i> didefinisikan sebagai:</p>
+                    <div class="math math-block">[a]<sub>R</sub> = { x ∈ A &nbsp;|&nbsp; a R x }</div>
+                    <p>Dengan demikian, <i>[a]<sub>R</sub></i> merupakan himpunan semua elemen pada <i>A</i> yang berelasi ekuivalen dengan <i>a</i>. Elemen-elemen yang memiliki hubungan kesetaraan berdasarkan relasi <i>R</i> dikelompokkan dalam kelas ekuivalen <i>(Rosen, 2019; Epp, 2020)</i>. Dua kelas ekuivalen bisa disebut “sama” apabila keduanya memuat elemen yang saling berelasi. Sebaliknya, jika dua kelas ekuivalen berbeda, maka keduanya tidak memiliki irisan.</p>
+
+                    <h3 id="partisi-teori">2.4 Partisi Himpunan</h3>
+                    <p>Partisi himpunan <i>A</i> merupakan kumpulan himpunan bagian tak kosong dari <i>A</i>, misalnya <i>P</i>, yang memenuhi dua syarat: setiap anggota <i>P</i> saling lepas, dan gabungan seluruh anggota <i>P</i> sama dengan <i>A</i>. Secara formal, jika <i>P</i> adalah partisi dari <i>A</i>, maka:</p>
+                    <div class="math math-block">⋃<sub>X ∈ P</sub> X = A</div>
+                    <p>dan untuk setiap <i>X, Y ∈ P</i> dengan <i>X ≠ Y</i>, berlaku:</p>
+                    <div class="math math-block">X ∩ Y = ∅</div>
+                    <p>Dengan kata lain, partisi membagi himpunan menjadi kelompok-kelompok yang tidak saling tumpang tindih dan mencakup seluruh elemen himpunan asal.</p>
+
+                    <h3 id="teorema">2.5 Teorema Kelas Ekuivalen dan Partisi</h3>
+                    <div class="callout callout-theorem">
+                        <div class="callout-title">Teorema</div>
+                        <p>Jika <i>R</i> adalah relasi ekuivalen pada himpunan tak kosong <i>A</i>, maka himpunan semua kelas ekuivalen dari <i>R</i>, yaitu</p>
+                        <div class="math math-block">{ [a]<sub>R</sub> &nbsp;|&nbsp; a ∈ A }</div>
+                        <p>membentuk partisi dari <i>A</i>.</p>
+                    </div>
+                    <p>Teorema ini menunjukkan bahwa relasi ekuivalen dan partisi merupakan dua konsep yang saling berkaitan: relasi ekuivalen menghasilkan partisi melalui kelas-kelas ekuivalennya, sedangkan setiap partisi dapat digunakan untuk membangun suatu relasi ekuivalen.</p>
+                    <p>Dalam konteks penelitian matematika oleh Yuliza (2015), konsep relasi ekuivalen juga telah dikembangkan pada struktur aljabar yang lebih lanjut, termasuk kajian relasi ekuivalen serupa semu pada <i>ring reguler stable</i> diperumum. Hal ini menunjukkan bahwa relasi ekuivalen bukan hanya konsep dasar dalam teori himpunan, tetapi juga memiliki peran penting dalam pengembangan teori aljabar dan matematika diskrit.</p>
+
+                    <!-- ===== 3. PENERAPAN ===== -->
+                    <h2 id="penerapan">3. Penerapan dalam Organisasi</h2>
+
+                    <h3 id="definisi">3.1 Definisi Himpunan dan Relasi</h3>
+                    <p>Misalkan <i>A</i> adalah himpunan seluruh anggota Badan Eksekutif Mahasiswa Fakultas Teknik Industri (BEM FTI), yaitu:</p>
+                    <div class="math math-block">A = { x ∣ x adalah anggota BEM FTI }</div>
+                    <p>Setiap elemen <i>x ∈ A</i> mewakili satu anggota BEM FTI. Kemudian, didefinisikan relasi biner <i>R</i> pada <i>A</i> berdasarkan kesamaan program studi sebagai berikut:</p>
+                    <div class="math math-block">a R b &nbsp;⟺&nbsp; anggota a dan b berasal dari program studi yang sama</div>
+                    <p>Sebagai contoh, jika <b>a</b> berasal dari program studi Sistem Informasi dan <b>b</b> juga berasal dari program studi Sistem Informasi, maka berlaku <i>a R b</i>. Relasi biner semacam ini merupakan dasar untuk membentuk pengelompokan berdasarkan kesamaan atribut tertentu <i>(Rosen, 2019; Johnsonbaugh, 2019)</i>.</p>
+
+                    <h3 id="pembuktian">3.2 Pembuktian Relasi Ekuivalen</h3>
+                    <p>Untuk membuktikan bahwa <i>R</i> merupakan relasi ekuivalen pada <i>A</i>, perlu ditunjukkan bahwa <i>R</i> memenuhi tiga sifat, yaitu <b>refleksif, simetris, dan transitif</b> <i>(Rosen, 2019; Epp, 2020; University of Basel, 2024)</i>.</p>
+
+                    <div class="proof">
+                        <div class="proof-head"><span class="proof-tag">a</span> Refleksif</div>
+                        <p>Untuk setiap <i>a ∈ A</i>, anggota <i>a</i> pasti berasal dari program studinya sendiri. Oleh karena itu, berlaku:</p>
+                        <div class="math">a R a</div>
+                        <p class="proof-end">Dengan demikian, relasi <i>R</i> bersifat <b>refleksif</b>.</p>
+                    </div>
+
+                    <div class="proof">
+                        <div class="proof-head"><span class="proof-tag">b</span> Simetris</div>
+                        <p>Misalkan <i>a R b</i>, artinya anggota <i>a</i> dan <i>b</i> berasal dari program studi yang sama. Maka <i>b</i> dan <i>a</i> juga berasal dari program studi yang sama, sehingga berlaku:</p>
+                        <div class="math">b R a</div>
+                        <p class="proof-end">Dengan demikian, relasi <i>R</i> bersifat <b>simetris</b>.</p>
+                    </div>
+
+                    <div class="proof">
+                        <div class="proof-head"><span class="proof-tag">c</span> Transitif</div>
+                        <p>Misalkan <i>a R b</i> dan <i>b R c</i>. Artinya:</p>
+                        <ul>
+                            <li><i>a</i> dan <i>b</i> berasal dari program studi yang sama.</li>
+                            <li><i>b</i> dan <i>c</i> berasal dari program studi yang sama.</li>
+                        </ul>
+                        <p>Karena <i>a</i> dan <i>b</i> berada pada program studi yang sama, serta <i>b</i> dan <i>c</i> juga berada pada program studi yang sama, maka <i>a</i> dan <i>c</i> pasti berasal dari program studi yang sama. Sehingga berlaku:</p>
+                        <div class="math">a R c</div>
+                        <p class="proof-end">Dengan demikian, relasi <i>R</i> bersifat <b>transitif</b>.</p>
+                    </div>
+
+                    <div class="callout callout-result">
+                        <p>Karena relasi <i>R</i> terbukti refleksif, simetris, dan transitif, maka <i>R</i> merupakan <b>relasi ekuivalen</b> pada <i>A</i>.</p>
+                    </div>
+
+                    <h3 id="kelas-ekuivalen">3.3 Kelas Ekuivalen</h3>
+                    <p>Kelas ekuivalen dari <i>a ∈ A</i> terhadap relasi ekuivalen <i>R</i> didefinisikan sebagai:</p>
+                    <div class="math math-block">[a]<sub>R</sub> = { x ∈ A &nbsp;|&nbsp; a R x }</div>
+                    <p>Dalam konteks BEM FTI, <i>[a]<sub>R</sub></i> merupakan himpunan seluruh anggota BEM FTI yang berasal dari program studi yang sama dengan <i>a</i>. Dengan kata lain, kelas ekuivalen mengelompokkan anggota BEM FTI berdasarkan kesamaan program studi. Sebagai contoh, jika terdapat program studi Teknik Informatika, Sistem Informasi, Teknik Kimia, dan Teknik Industri, maka kelas ekuivalen yang terbentuk dapat dinyatakan sebagai berikut:</p>
+
+                    <ul class="class-list">
+                        <li class="c1"><span class="math">[Teknik Informatika] = { x ∈ A ∣ x berasal dari Teknik Informatika }</span></li>
+                        <li class="c2"><span class="math">[Sistem Informasi] = { x ∈ A ∣ x berasal dari Sistem Informasi }</span></li>
+                        <li class="c3"><span class="math">[Teknik Kimia] = { x ∈ A ∣ x berasal dari Teknik Kimia }</span></li>
+                        <li class="c4"><span class="math">[Teknik Industri] = { x ∈ A ∣ x berasal dari Teknik Industri }</span></li>
+                    </ul>
+
+                    <p>Setiap kelas ekuivalen tersebut memuat anggota BEM FTI yang memiliki kesamaan program studi. Dengan demikian, kelas ekuivalen berfungsi sebagai alat klasifikasi yang sistematis dalam mengelompokkan anggota BEM FTI.</p>
+
+                    <h3 id="partisi">3.4 Partisi Himpunan Anggota BEM FTI</h3>
+                    <p>Misalkan terdapat <i>n</i> program studi pada FTI, yaitu <i>P<sub>1</sub>, P<sub>2</sub>, …, P<sub>n</sub></i>. Kelas ekuivalen yang terbentuk berdasarkan relasi <i>R</i> adalah:</p>
+                    <div class="math math-block">[P<sub>1</sub>], [P<sub>2</sub>], …, [P<sub>n</sub>]</div>
+
+                    <figure class="partition-fig">
+                        <div class="partition-box" role="img" aria-label="Himpunan A terbagi menjadi empat kelas ekuivalen berdasarkan program studi">
+                            <span class="partition-label">A</span>
+                            <div class="partition-grid">
+                                <div class="part c1"><b>[P<sub>1</sub>]</b><small>Teknik Informatika</small></div>
+                                <div class="part c2"><b>[P<sub>2</sub>]</b><small>Sistem Informasi</small></div>
+                                <div class="part c3"><b>[P<sub>3</sub>]</b><small>Teknik Kimia</small></div>
+                                <div class="part c4"><b>[P<sub>4</sub>]</b><small>Teknik Industri</small></div>
+                            </div>
+                        </div>
+                        <figcaption>Ilustrasi: himpunan <i>A</i> terbagi menjadi kelas-kelas ekuivalen yang tidak saling tumpang tindih (contoh dengan empat program studi).</figcaption>
+                    </figure>
+
+                    <p>Kelas-kelas ekuivalen tersebut memenuhi dua sifat utama partisi himpunan, yaitu saling lepas dan gabungannya sama dengan himpunan asal.</p>
+
+                    <p><b>Pertama</b>, setiap dua kelas ekuivalen yang berbeda tidak memiliki irisan, sehingga berlaku:</p>
+                    <div class="math math-block">[P<sub>i</sub>] ∩ [P<sub>j</sub>] = ∅, &nbsp; untuk i ≠ j</div>
+                    <p>Hal ini berarti tidak ada anggota BEM FTI yang termasuk dalam dua program studi sekaligus. Setiap anggota hanya dapat menjadi anggota dari satu kelas ekuivalen, yaitu kelompok program studinya sendiri.</p>
+
+                    <p><b>Kedua</b>, gabungan seluruh kelas ekuivalen sama dengan himpunan seluruh anggota BEM FTI, yaitu:</p>
+                    <div class="math math-block">[P<sub>1</sub>] ∪ [P<sub>2</sub>] ∪ ⋯ ∪ [P<sub>n</sub>] = A</div>
+                    <p>Artinya, seluruh anggota BEM FTI tercakup dalam kelompok-kelompok program studi yang terbentuk. Tidak ada anggota BEM FTI yang berada di luar kelas ekuivalen mana pun.</p>
+
+                    <p>Dengan demikian, kelas-kelas ekuivalen yang terbentuk dari relasi <i>R</i> memenuhi definisi partisi himpunan. Berdasarkan teorema relasi ekuivalen dan partisi, jika <i>R</i> adalah relasi ekuivalen pada <i>A</i>, maka himpunan semua kelas ekuivalen:</p>
+                    <div class="math math-block">{ [a]<sub>R</sub> &nbsp;|&nbsp; a ∈ A } &nbsp;=&nbsp; { [P<sub>1</sub>], [P<sub>2</sub>], …, [P<sub>n</sub>] }</div>
+                    <p>merupakan partisi dari <i>A</i>. Partisi tersebut menunjukkan bahwa anggota BEM FTI dapat dikelompokkan secara lengkap dan tidak tumpang tindih berdasarkan program studi masing-masing.</p>
+
+                    <!-- ===== 4. KESIMPULAN ===== -->
+                    <h2 id="kesimpulan">4. Kesimpulan</h2>
+                    <div class="callout callout-result">
+                        <ul>
+                            <li>Relasi kesamaan program studi pada himpunan anggota BEM FTI bersifat refleksif, simetris, dan transitif.</li>
+                            <li>Oleh karena itu, relasi tersebut merupakan relasi ekuivalen.</li>
+                            <li>Kelas ekuivalen yang terbentuk adalah kelompok anggota BEM FTI berdasarkan program studi.</li>
+                            <li>Kelas-kelas ekuivalen tersebut saling lepas dan gabungannya adalah seluruh anggota BEM FTI, sehingga membentuk partisi himpunan.</li>
+                        </ul>
+                    </div>
+
+                    <!-- ===== DAFTAR PUSTAKA ===== -->
+                    <h2 id="daftar-pustaka">Daftar Pustaka</h2>
+                    <ol class="references">
+                        <li>Wati, O. L. (2026). <i>Algoritma: Jurnal Matematika, Ilmu Pengetahuan Alam, Kebumian dan Angkasa</i>, 4(1), Januari 2026. <a href="https://doi.org/10.62383/algoritma.v4i1.922" target="_blank" rel="noopener">https://doi.org/10.62383/algoritma.v4i1.922</a></li>
+                        <li>Yuliza, E. (2015). Relasi Ekuivalen Serupa Semu pada Ring Reguler Stable Diperumum. Departemen Matematika, FMIPA, Universitas Padjadjaran, Jatinangor. <a href="https://doi.org/10.24198/jmi.v11.n2.9421.97-102" target="_blank" rel="noopener">https://doi.org/10.24198/jmi.v11.n2.9421.97-102</a></li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="widget toc-widget">
+                <h3>Daftar Isi</h3>
+                <div class="toc-wrap" role="navigation" aria-label="Daftar isi artikel">
+                    <ul class="toc" id="toc">
+                        <li><a href="#pendahuluan">1. Pendahuluan</a></li>
+                        <li><a href="#tinjauan-pustaka">2. Tinjauan Pustaka</a>
+                            <ul>
+                                <li><a href="#himpunan-relasi">2.1 Himpunan dan Relasi Biner</a></li>
+                                <li><a href="#relasi-ekuivalen">2.2 Relasi Ekuivalen</a></li>
+                                <li><a href="#kelas-ekuivalen-teori">2.3 Kelas Ekuivalen</a></li>
+                                <li><a href="#partisi-teori">2.4 Partisi Himpunan</a></li>
+                                <li><a href="#teorema">2.5 Teorema Kelas Ekuivalen dan Partisi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#penerapan">3. Penerapan dalam Organisasi</a>
+                            <ul>
+                                <li><a href="#definisi">3.1 Definisi Himpunan dan Relasi</a></li>
+                                <li><a href="#pembuktian">3.2 Pembuktian Relasi Ekuivalen</a></li>
+                                <li><a href="#kelas-ekuivalen">3.3 Kelas Ekuivalen</a></li>
+                                <li><a href="#partisi">3.4 Partisi Himpunan Anggota</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#kesimpulan">4. Kesimpulan</a></li>
+                        <li><a href="#daftar-pustaka">Daftar Pustaka</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- <div class="widget">
+                <h3>Tentang Kelompok 1</h3>
+                <p>Selamat datang di blog kami! Kami adalah mahasiswa semester 1 prodi Sistem Informasi UPNVYK yang membagikan ilmu menarik seputar mata kuliah Matematika Diskrit</p>
+            </div> -->
+
+            <div class="widget">
+                <h3>Artikel Populer</h3>
+                <ul class="populer-list">
+                    <li>
+                        <a href="matdis.html">Apa Itu Matematika Diskrit?</a>
+                        <span>25 Oktober 2026</span>
+                    </li>
+                    <li>
+                        <a href="pengertian.html">Pengertian Himpunan, Relasi, dan Rumus Mudahnya!</a>
+                        <span>18 Oktober 2026</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Tombol kembali ke atas -->
+    <button class="to-top" id="toTop" type="button" aria-label="Kembali ke atas">↑</button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kelompok1 SI-B. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Progress bar baca + tombol kembali ke atas
+        const bar = document.getElementById('readProgress');
+        const toTop = document.getElementById('toTop');
+        function onScroll() {
+            const h = document.documentElement;
+            const max = h.scrollHeight - h.clientHeight;
+            const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+            bar.style.width = pct + '%';
+            toTop.classList.toggle('show', h.scrollTop > 600);
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Sorot bagian aktif pada daftar isi
+        const links = [...document.querySelectorAll('#toc a')];
+        const targets = links.map(a => document.querySelector(a.getAttribute('href')));
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        const i = targets.indexOf(e.target);
+                        links.forEach(l => l.classList.remove('current'));
+                        if (i > -1) links[i].classList.add('current');
+                    }
+                });
+            }, { rootMargin: '-15% 0px -75% 0px' });
+            targets.forEach(t => t && io.observe(t));
+        }
+    </script>
+
+</body>
+</html>

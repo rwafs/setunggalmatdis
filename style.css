@@ -1,0 +1,375 @@
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #3498db;
+}
+
+/* --- Header & Nav --- */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 👈 ATUR JARAK DI SINI: ubah angkanya untuk menjauhkan/merapatkan */
+}
+
+.logo-img {
+    height: 40px; /* Sesuaikan tinggi ini dengan ukuran navbar Anda */
+    width: auto;  /* Biar lebar gambar proporsional otomatis */
+    object-fit: contain;
+}
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    display: flex;
+    align-items: left;
+    gap: 1px; 
+}
+
+.logo span {
+    color: #3498db;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: #555;
+    padding: 5px 0;
+}
+
+/* nav ul li a.active, nav ul li a:hover {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+} */
+
+/* --- Layout Main Grid --- */
+.main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* --- Article Content --- */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card-img {
+    width: calc(100% + 40px); /* Melebarkan gambar melewati padding kiri-kanan kartu (20px + 20px) */
+    margin-left: -20px;       /* Menarik gambar ke ujung kiri kartu */
+    margin-right: -20px;      /* Menarik gambar ke ujung kanan kartu */
+    margin-top: -20px;        /* Menarik gambar ke ujung atas kartu */
+    
+    height: 300px;            /* Mempertahankan tinggi gambar sesuai keinginan Anda */
+    object-fit: cover;        /* Memastikan gambar proporsional dan tidak gepeng saat ditarik penuh */
+    display: block;
+}
+
+.card-body {
+    /* padding: 30px; */
+    margin-top: 20px;
+}
+
+.category {
+    display: inline-block;
+    background: #e8f4fd;
+    color: #3498db;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.article-title {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.meta {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-body p {
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+    color: #4f5f6f;
+    text-align: justify;
+}
+
+.card-body h4 {
+    margin-bottom: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+    color: #4f5f6f;
+    text-align: justify;
+}
+
+blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #555;
+    font-size: 18px;
+}
+
+/* Style Section About Us */
+.about-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Garis bawah dekoratif pada judul */
+.about-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #0066cc; /* Sesuaikan dengan warna utama SisfoUPNYK */
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+.about-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Grid Layout untuk Kartu Anggota */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Desain Kartu Nama */
+.team-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px 20px;
+    width: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Efek saat kursor diarahkan ke kartu */
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Bingkai Foto Bulat */
+.member-img-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px auto;
+    border: 3px solid #0066cc; /* Lingkaran warna senada navbar */
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography di dalam kartu */
+.member-name {
+    font-size: 18px;
+    color: #222;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.member-nim {
+    font-size: 14px;
+    color: #0066cc;
+    margin: 0 0 12px 0;
+    font-weight: 500;
+}
+
+.member-role {
+    font-size: 13px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Responsif untuk layar HP kecil agar kartu otomatis turun rapi */
+@media (max-width: 600px) {
+    .team-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+
+/* --- Sidebar Widgets --- */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.widget {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.widget h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 8px;
+}
+
+.widget p {
+    font-size: 14px;
+    color: #666;
+}
+
+.populer-list {
+    list-style: none;
+}
+
+.populer-list li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.populer-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.populer-list a {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.populer-list span {
+    font-size: 12px;
+    color: #95a5a6;
+}
+
+/* --- Footer --- */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* --- Responsive Media Query --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+        
+    }
+
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .article-title {
+        font-size: 24px;
+    }
+}
