@@ -4,6 +4,9 @@
    Warna mengikuti tema: #2c3e50 (navy) dan #3498db (biru).
    ========================================================== */
 
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /* ---------- Hero ---------- */
 .about-hero {
     background: linear-gradient(135deg, #2c3e50 0%, #34607f 100%);
